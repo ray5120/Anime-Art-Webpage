@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Product Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/custom.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <header></header>
+    <section>
+        <div class="row">
+            <div class="left">
+                <img src="/images/<%= data[0].image %>" alt="SAO" />
+            </div>
+            <div class="center">
+                <div class="cnlabel">
+                    <label><strong> Price:</strong> $<%= data[0].price %></label>
+                    <br/>
+                    <label><strong> Size:</strong> (
+                        <%= data[0].size %>)</label>
+                </div>
+            </div>
+            <div class="right">
+                <div id="errMsg" style="display: none">
+                    Please fill up all the details below.
+                </div>
+                <form action="/orders" id="frmProduct" name="frmProduct" method="post" onsubmit="return validateForm()">
+                    <label for="name">Name*</label>
+                    <input type="text" id="name" onfocus="return rmErr()" name="name" placeholder="Name">
+                    <input type="hidden" id="id" name="id" value=" <%= data[0].id %>">
+                    <label for="address">Address*</label>
+                    <textarea placeholder="Address" onfocus="return rmErr()" id="address" name="address"></textarea>
+                    <label for="qty">Quantity*</label>
+                    <input type="text" id="qty" name="qty" placeholder="Quantity" onfocus="return rmErr()" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+        </div>
+    </section>
+    <!--  section end  -->
+    <footer>
+    </footer>
+</body>
+<script>
+    function validateForm() {
+        var name = document.forms["frmProduct"]["name"].value;
+        var address = document.forms["frmProduct"]["address"].value;
+        var qty = document.forms["frmProduct"]["qty"].value;
+        if (name == "" || address == "" || qty == "") {
+            document.getElementById('errMsg').style.display = "block";
+            return false;
+        }
+    }
+    function rmErr() {
+        document.getElementById("errMsg").style.display = "none";
+    }
+</script>
+
+</html>

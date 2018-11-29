@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="/css/custom.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+    </header>
+    <section>
+        <div>
+        <div class="content">
+            <h2>Anime Art</h2>
+            <p> Anime: the classic Japanese style of cartoon and show. When you love anime, you think of swords and sorcery,
+                excitement and magic and plenty of adventure. While you can't always turn on your television or mobile device
+                and enjoy anime every minute of the day, you can display it on your walls so that you can appreciate this
+                fantastic art form whenever you like.
+            </p>
+        </div>
+        <div class="products">
+            <% for(var i = 0; i < data.length; ++i) {%>
+                <div class="products_list">
+                    <img src="/images/<%= data[i].image %>" alt="SAO" />
+                    <br/>
+                    <a href="product/<%= data[i].id %>">View Product </a>
+                </div>
+                <% } %>
+        </div>
+    </section></div>
+    <!--  section end  -->
+    <footer>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/custom.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <header></header>
+    <section>
+        <div class="order-details">
+            <h2>Thank you for ordering with us.</h2>
+            <div class="detail">
+                <strong>Order No : </strong>
+                <%= order[0].orderno %>
+            </div>
+            <div class="detail">
+                <strong>Cost : </strong>$
+                <%=order[0].total %>
+            </div>
+            <div class="detail">
+                <strong>Name : </strong>
+                <%= order[0].name %>
+            </div>
+            <div class="detail">
+                <strong>Address : </strong>
+                <%= order[0].address %>
+            </div>
+        </div>
+    </section>
+    <!--  section end  -->
+    <footer></footer>
+</body>
+
+</html>

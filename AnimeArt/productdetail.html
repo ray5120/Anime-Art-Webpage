@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Productdetail</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/custom.css" rel ="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <header>
+        </header>
+        <!-- header end -->
+        <section>
+            <div class="row">
+                <div class="left">
+                    <img src="images/SAO.jpg" alt="SAO"/>
+                </div>
+                <div class="center" >
+                    <div class="cnlabel">
+                        <label> <strong>Price:</strong> $20</label><br/>
+                        <label> <strong>Size:</strong>(1190mm x 670mm)</label>
+                    </div>
+                </div>
+            <div class="right">
+                <div id="errMsg" style="display: none">
+                    Please fill up all the details below.
+                </div>
+                <form action="/action_page.php">
+                    <label for="fname">Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Name">
+                    <label for="add">Address</label>
+                    <textarea placeholder="Address"></textarea>
+                    <label for="qty">Quantity</label>
+                    <input type="text" id="qty" name="qty" placeholder="Qty">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            </div>
+        </section>
+        <!-- section end-->
+        <footer></footer>
+        <!-- footer end-->
+        
+    </body>
+<script>
+            function validateForm() {
+                var name = document.forms["frmProduct"]["name"].value;
+                var address = document.forms["frmProduct"]["address"].value;
+                var qty = document.forms["frmProduct"]["qty"].value;
+                if (name == "" || address == "" || qty == "") {
+                    document.getElementById('errMsg').style.display = "block";
+                    return false;
+                }
+            }
+            function rmErr() {
+                document.getElementById("errMsg").style.display = "none";
+            }
+        </script>
+</html>
