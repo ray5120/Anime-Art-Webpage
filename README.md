@@ -1,5 +1,5 @@
 # Product-Ordering-web-service
-Including frontend and backend
+This is a full-stack website created by me during Heriot-watt University Second Year on Web Programming Module.
 
 ![alt text](https://github.com/ray2310/Product-Ordering-web-service/blob/master/AnimeArt/1.jpg)
 
